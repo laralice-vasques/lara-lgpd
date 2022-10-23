@@ -1,11 +1,11 @@
-import { useForm } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 import { useLGPD } from "../contexts/lgpdAgreement";
 import { GROUP_QUESTIONS } from "../constants";
 
 export function Form() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useFormContext();
   const { setFormData } = useLGPD();
   const navigate = useNavigate();
 

@@ -159,7 +159,7 @@ export function Form() {
         <div key={group.title} className="mb-3">
           <h4 className="mb-0">{group.title}</h4>
 
-          <div className="card card-body">
+          <div className="card card-body shadow-sm">
             {group.questions.map((question, questionIndex) => (
               <div key={question} className="mb-3">
                 <p className="mb-0">{question}</p>

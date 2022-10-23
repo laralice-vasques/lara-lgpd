@@ -155,7 +155,7 @@ export function Form() {
 
   return (
     <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
-      {GROUP_QUESTIONS.map((group) => (
+      {GROUP_QUESTIONS.map((group, groupIndex) => (
         <div key={group.title} className="mb-3">
           <h4 className="mb-0">{group.title}</h4>
 
@@ -165,14 +165,17 @@ export function Form() {
                 <p className="mb-0">{question}</p>
 
                 <div className="form-check form-check-inline">
-                  <label className="form-check-label" htmlFor="no">
+                  <label
+                    className="form-check-label"
+                    htmlFor={`na-g-${groupIndex}-q-${questionIndex}`}
+                  >
                     <input
                       {...register(`${group.title}.${questionIndex}`, {
                         required: true,
                       })}
                       className="form-check-input"
                       type="radio"
-                      id="no"
+                      id={`na-g-${groupIndex}-q-${questionIndex}`}
                       value="-1"
                     />
                     Não se aplica
@@ -180,14 +183,17 @@ export function Form() {
                 </div>
 
                 <div className="form-check form-check-inline">
-                  <label className="form-check-label" htmlFor="no">
+                  <label
+                    className="form-check-label"
+                    htmlFor={`no-g-${groupIndex}-q-${questionIndex}`}
+                  >
                     <input
                       {...register(`${group.title}.${questionIndex}`, {
                         required: true,
                       })}
                       className="form-check-input"
                       type="radio"
-                      id="no"
+                      id={`no-g-${groupIndex}-q-${questionIndex}`}
                       value="0"
                     />
                     Não
@@ -195,31 +201,37 @@ export function Form() {
                 </div>
 
                 <div className="form-check form-check-inline">
-                  <input
-                    {...register(`${group.title}.${questionIndex}`, {
-                      required: true,
-                    })}
-                    className="form-check-input"
-                    type="radio"
-                    id="partially"
-                    value="1"
-                  />
-                  <label className="form-check-label" htmlFor="partially">
+                  <label
+                    className="form-check-label"
+                    htmlFor={`partially-g-${groupIndex}-q-${questionIndex}`}
+                  >
+                    <input
+                      {...register(`${group.title}.${questionIndex}`, {
+                        required: true,
+                      })}
+                      className="form-check-input"
+                      type="radio"
+                      id={`partially-g-${groupIndex}-q-${questionIndex}`}
+                      value="1"
+                    />
                     Parcialmente
                   </label>
                 </div>
 
                 <div className="form-check form-check-inline">
-                  <input
-                    {...register(`${group.title}.${questionIndex}`, {
-                      required: true,
-                    })}
-                    className="form-check-input"
-                    type="radio"
-                    id="yes"
-                    value="2"
-                  />
-                  <label className="form-check-label" htmlFor="yes">
+                  <label
+                    className="form-check-label"
+                    htmlFor={`yes-g-${groupIndex}-q-${questionIndex}`}
+                  >
+                    <input
+                      {...register(`${group.title}.${questionIndex}`, {
+                        required: true,
+                      })}
+                      className="form-check-input"
+                      type="radio"
+                      id={`yes-g-${groupIndex}-q-${questionIndex}`}
+                      value="2"
+                    />
                     Sim
                   </label>
                 </div>

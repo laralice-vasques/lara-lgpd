@@ -13,10 +13,10 @@ export function Result() {
       style={{ maxWidth: "800px" }}
     >
       <h4 className="text-center">Resultado</h4>
-      <div className="alert alert-primary" role="alert">
+      <div className="alert alert-primary text-center" role="alert">
         Você está em {result.generalAgreementPercentage}% de acordo com a LGPD
       </div>
-      <div className="d-flex justify-content-center text-center flex-wrap">
+      <div className="d-flex justify-content-center text-center flex-wrap mb-2">
         {result.agreementByGroup.map((group) => (
           <div
             key={group.title}

@@ -8,6 +8,11 @@ function parseAnswers(values) {
 
 function calculateAgreementPercentage(values) {
   const totalPoints = values.length * 2;
+
+  if (totalPoints == 0) {
+    return 0;
+  }
+
   const points = values.reduce((acc, value) => acc + value, 0);
   return ((points / totalPoints) * 100).toFixed(2);
 }

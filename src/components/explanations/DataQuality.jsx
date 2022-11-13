@@ -3,7 +3,7 @@ export function DataQuality() {
     <>
       O titular dos dados deve poder atualizar, completar ou apagar dados
       incoerentes, como atualizar um endereço para que a correspondência seja
-      entregue no local correto. O Brasil ainda informa que a consulta sobre a
+      entregue no local correto. A LGPD ainda informa que a consulta sobre a
       forma e a duração do tratamento deve ser facilitada e gratuita. O cliente
       deve ter o direito de rever e revogar os termos de uso ou políticas de
       privacidade que tenha aceitado. Ele também pode solicitar a anonimização

@@ -1,13 +1,14 @@
 export function Question({
   id,
-  title,
+  children,
   inputProps,
   disableNotApplicable = false,
   disablePartial = false,
+  disableNo = false,
 }) {
   return (
     <div className="mb-3">
-      <p className="mb-1">{title}</p>
+      <p className="mb-1">{children}</p>
 
       {!disableNotApplicable ? (
         <div className="form-check form-check-inline">
@@ -24,18 +25,20 @@ export function Question({
         </div>
       ) : null}
 
-      <div className="form-check form-check-inline">
-        <label className="form-check-label" htmlFor={`no-${id}`}>
-          <input
-            {...inputProps}
-            className="form-check-input"
-            type="radio"
-            id={`no-${id}`}
-            value="0"
-          />
-          Não
-        </label>
-      </div>
+      {!disableNo ? (
+        <div className="form-check form-check-inline">
+          <label className="form-check-label" htmlFor={`no-${id}`}>
+            <input
+              {...inputProps}
+              className="form-check-input"
+              type="radio"
+              id={`no-${id}`}
+              value="0"
+            />
+            Não
+          </label>
+        </div>
+      ) : null}
 
       {!disablePartial ? (
         <div className="form-check form-check-inline">

@@ -1,5 +1,7 @@
 import { Navigate, useNavigate } from "react-router-dom";
 import { useLGPD } from "../contexts/lgpdAgreement";
+import { Keyword } from "../components/Keyword";
+import { EXPLANATIONS } from "../contexts/explanations";
 
 export function Result() {
   const { result } = useLGPD();
@@ -22,7 +24,13 @@ export function Result() {
             key={group.title}
             className="border rounded shadow-sm p-2 mb-3 me-2"
           >
-            <h6 className="mb-0">{group.title}</h6>
+            <h6 className="mb-0">
+              {
+                <Keyword explanation={EXPLANATIONS[group.title]}>
+                  {group.title}
+                </Keyword>
+              }
+            </h6>
             <p className="mb-0">{group.agreementPercentage}%</p>
           </div>
         ))}

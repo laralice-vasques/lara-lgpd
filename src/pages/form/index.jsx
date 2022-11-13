@@ -13,7 +13,7 @@ const STEPS = {
 };
 
 export default function Form() {
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
 
   const CurrentStepComponent = STEPS[step];
 
